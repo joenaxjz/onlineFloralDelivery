@@ -1,0 +1,17 @@
+is_global = true
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = onlineFloralDelivery
+build_property.RootNamespace = onlineFloralDelivery
+build_property.ProjectDir = G:\Study\Aptech\E_project_Term3\onlineFloralDelivery\onlineFloralDelivery_API\onlineFloralDelivery\
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = G:\Study\Aptech\E_project_Term3\onlineFloralDelivery\onlineFloralDelivery_API\onlineFloralDelivery
+build_property._RazorSourceGeneratorDebug = 
