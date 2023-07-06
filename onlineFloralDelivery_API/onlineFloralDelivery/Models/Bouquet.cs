@@ -19,17 +19,21 @@ public partial class Bouquet
 
     public int? Quantity { get; set; }
 
-    public string? ImageUrl { get; set; }
-
     public DateTime? Created { get; set; }
 
     public int? CategoryId { get; set; }
 
     public bool? Status { get; set; }
 
-    public virtual ICollection<BouquetEvent> BouquetEvents { get; set; } = new List<BouquetEvent>();
-
     public virtual ICollection<Cart> Carts { get; set; } = new List<Cart>();
 
     public virtual Category? Category { get; set; }
+
+    public virtual ICollection<Comment> Comments { get; set; } = new List<Comment>();
+
+    public virtual ICollection<Image> Images { get; set; } = new List<Image>();
+
+    public virtual ICollection<OrderDetail> OrderDetails { get; set; } = new List<OrderDetail>();
+
+    public virtual ICollection<Event> Events { get; set; } = new List<Event>();
 }

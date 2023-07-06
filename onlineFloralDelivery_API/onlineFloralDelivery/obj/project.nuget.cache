@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "7a7ApRB4wiu0B4h4Yig0MpG/NDWDyoh13RF77wZFxfkeT1T+/zWrBcFJ78KoJoTtM9nXDpWbB4yG+y1f2lUcXQ==",
+  "dgSpecHash": "3FPgn14TLxTG2Y/cDyozR/t6xFBEOxUGbmwugxI0P24b5VmIbzdM77Cq98Jy57mI3gcI51AFFeRaMPnommPUyA==",
   "success": true,
   "projectFilePath": "G:\\Study\\Aptech\\E_project_Term3\\onlineFloralDelivery\\onlineFloralDelivery_API\\onlineFloralDelivery\\onlineFloralDelivery.csproj",
   "expectedPackageFiles": [
@@ -44,6 +44,7 @@
     "C:\\Users\\acer\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
     "C:\\Users\\acer\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
     "C:\\Users\\acer\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
+    "C:\\Users\\acer\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\acer\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\acer\\.nuget\\packages\\system.codedom\\4.4.0\\system.codedom.4.4.0.nupkg.sha512",
     "C:\\Users\\acer\\.nuget\\packages\\system.configuration.configurationmanager\\5.0.0\\system.configuration.configurationmanager.5.0.0.nupkg.sha512",

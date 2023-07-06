@@ -70,3 +70,4 @@ G:\Study\Aptech\E_project_Term3\onlineFloralDelivery\onlineFloralDelivery_API\on
 G:\Study\Aptech\E_project_Term3\onlineFloralDelivery\onlineFloralDelivery_API\onlineFloralDelivery\obj\Debug\net7.0\onlineFloralDelivery.pdb
 G:\Study\Aptech\E_project_Term3\onlineFloralDelivery\onlineFloralDelivery_API\onlineFloralDelivery\obj\Debug\net7.0\onlineFloralDelivery.genruntimeconfig.cache
 G:\Study\Aptech\E_project_Term3\onlineFloralDelivery\onlineFloralDelivery_API\onlineFloralDelivery\obj\Debug\net7.0\ref\onlineFloralDelivery.dll
+G:\Study\Aptech\E_project_Term3\onlineFloralDelivery\onlineFloralDelivery_API\onlineFloralDelivery\bin\Debug\net7.0\Newtonsoft.Json.dll

@@ -2,7 +2,7 @@
 
 namespace onlineFloralDelivery.Services;
 
-public interface contactService
+public interface ContactService
 {
     public dynamic showAll();
     public bool Create(Contact contact);

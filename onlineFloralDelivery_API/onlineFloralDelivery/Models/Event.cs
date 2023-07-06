@@ -19,5 +19,5 @@ public partial class Event
 
     public bool? IsAction { get; set; }
 
-    public virtual ICollection<BouquetEvent> BouquetEvents { get; set; } = new List<BouquetEvent>();
+    public virtual ICollection<Bouquet> Bouquets { get; set; } = new List<Bouquet>();
 }

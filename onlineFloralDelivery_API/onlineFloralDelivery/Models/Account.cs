@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace onlineFloralDelivery.Models;
 
-public partial class User
+public partial class Account
 {
-    public int UserId { get; set; }
+    public int AccountId { get; set; }
 
     public string? Username { get; set; }
 
@@ -19,6 +19,8 @@ public partial class User
 
     public string? ImageUrl { get; set; }
 
+    public int? RoleId { get; set; }
+
     public DateTime? Created { get; set; }
 
     public DateTime? Dob { get; set; }
@@ -26,4 +28,10 @@ public partial class User
     public bool? Status { get; set; }
 
     public virtual ICollection<Cart> Carts { get; set; } = new List<Cart>();
+
+    public virtual ICollection<Comment> Comments { get; set; } = new List<Comment>();
+
+    public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
+
+    public virtual Role? Role { get; set; }
 }

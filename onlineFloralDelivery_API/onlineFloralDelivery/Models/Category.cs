@@ -11,7 +11,5 @@ public partial class Category
 
     public DateTime? Created { get; set; }
 
-    public bool? Status { get; set; }
-
     public virtual ICollection<Bouquet> Bouquets { get; set; } = new List<Bouquet>();
 }

@@ -2,10 +2,9 @@
 
 namespace onlineFloralDelivery.Services;
 
-public interface adminService
+public interface RoleService
 {
     public dynamic showAll();
-    public bool Create(Admin admin);
-    public bool update(Admin admin);
-
+    public bool Create(Role role);
+    public bool Update(Role role);
 }

@@ -6,12 +6,12 @@ namespace onlineFloralDelivery.Controllers;
 [Route("api/contact")]
 public class ContactController : Controller
 {
-    private contactService contactService;
-    public ContactController(contactService _contactService)
+    private ContactService contactService;
+    public ContactController(ContactService _contactService)
     {
         contactService = _contactService;
     }
-
+    // SHOW ALL ROLES
     [Produces("application/json")]
     [HttpGet("showAll")]
     public IActionResult showAll()
@@ -28,8 +28,9 @@ public class ContactController : Controller
         }
     }
 
+    // ADD NEW ROLE
     [Produces("application/json")]
-    [HttpPost("create")]
+    [HttpPost("addnew")]
     // cùng lúc nhận hình ảnh và chuỗi JSON
     public IActionResult Create([FromBody] Contact contact)
     {

@@ -1,13 +1,27 @@
 ﻿using onlineFloralDelivery.Models;
+using System.Data;
 
 namespace onlineFloralDelivery.Services;
 
-public class contactServiceImp : contactService
+public class ContactServiceImp : ContactService
 {
     private DatabaseContext db;
-    public contactServiceImp(DatabaseContext _db)
+    public ContactServiceImp(DatabaseContext _db)
     {
         db = _db;
+    }
+
+    public dynamic showAll()
+    {
+        return db.Contacts.OrderByDescending(ct => ct.ContactId).Select(ct => new
+        {
+            contactId = ct.ContactId,
+            Name = ct.Name,
+            Email = ct.Email,
+            Subject = ct.Subject,
+            Message = ct.Message,
+            Created = ct.Created,
+        }).ToList();
     }
 
     public bool Create(Contact contact)
@@ -21,19 +35,5 @@ public class contactServiceImp : contactService
         {
             return false;
         }
-    }
-
-    // hiển thị tất cả contact
-    public dynamic showAll()
-    {
-        return db.Contacts.Select(ct => new
-        {
-            Contactid = ct.ContactId,
-            Name = ct.Name,
-            Email = ct.Email,
-            Subject = ct.Subject,
-            Message = ct.Message,
-            Created = ct.Created,
-        }).ToList();
     }
 }

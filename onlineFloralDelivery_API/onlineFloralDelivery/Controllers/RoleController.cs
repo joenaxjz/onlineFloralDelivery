@@ -3,23 +3,23 @@ using onlineFloralDelivery.Models;
 using onlineFloralDelivery.Services;
 
 namespace onlineFloralDelivery.Controllers;
-[Route("api/admin")]
-
-public class AdminController : Controller
+[Route("api/role")]
+public class RoleController : Controller
 {
-    private adminService adminService;
-    public AdminController(adminService _adminService)
+    private RoleService roleService;
+    public RoleController(RoleService _roleService)
     {
-        adminService = _adminService;
+        roleService = _roleService;
     }
 
+    // SHOW ALL ROLES
     [Produces("application/json")]
     [HttpGet("showAll")]
     public IActionResult showAll()
     {
         try
         {
-            var rs = adminService.showAll();
+            var rs = roleService.showAll();
             return Ok(rs);
         }
         catch (Exception ex)
@@ -29,14 +29,15 @@ public class AdminController : Controller
         }
     }
 
+    // ADD NEW ROLE
     [Produces("application/json")]
-    [HttpPost("create")]
+    [HttpPost("addnew")]
     // cùng lúc nhận hình ảnh và chuỗi JSON
-    public IActionResult Create([FromBody] Admin admin)
+    public IActionResult Create([FromBody] Role role)
     {
         try
         {
-            bool result = adminService.Create(admin);
+            bool result = roleService.Create(role);
             return Ok(new
             {
                 Result = result
@@ -50,13 +51,14 @@ public class AdminController : Controller
     }
 
 
+    // UPDATE
     [Produces("application/json")]
     [HttpPut("update")]
-    public IActionResult Update([FromBody] Admin admin)
+    public IActionResult Update([FromBody] Role role)
     {
         try
         {
-            bool result = adminService.update(admin);
+            bool result = roleService.Update(role);
             return Ok(new
             {
                 Result = result
