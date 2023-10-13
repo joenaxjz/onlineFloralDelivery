@@ -1,0 +1,147 @@
+<div class="single-product-tab-area mg-b-30">
+  <!-- Single pro tab review Start-->
+  <div class="single-pro-review-area">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <div class="review-tab-pro-inner">
+            <ul id="myTab3" class="tab-review-design">
+              <li class="active">
+                <a
+                  ><i class="icon nalika-edit" aria-hidden="true"></i> Edit Event</a
+                >
+              </li>
+
+              <li class="active">
+                <a [routerLink]="['/admin/event']"
+                  >Back</a
+                >
+              </li>
+            </ul>
+            <div id="myTabContent" class="tab-content custom-product-edit">
+              <div
+                class="product-tab-list tab-pane fade active in"
+                id="description"
+              >
+                <div class="row">
+                  <!-- from them bo hoa -->
+
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                      <form [formGroup]="EditEventForm" (ngSubmit)="save()">
+
+                      <div class="review-content-section">
+                        <div *ngIf="EditEventForm.get('eventName').touched">
+                          <div *ngIf="EditEventForm.hasError('required',['eventName'])" style="color:red">This text is required</div>
+                      </div>
+                        <div class="input-group mg-b-pro-edt">
+                          <span class="input-group-addon"
+                            ><i class="icon nalika-edit" aria-hidden="true"></i
+                          ></span>
+                          <!-- nhap lieu o day -->
+                          <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Event Title"
+                            formControlName="eventName"
+                          />
+                        </div>
+                        <div *ngIf="EditEventForm.get('description').touched">
+                          <div *ngIf="EditEventForm.hasError('required',['description'])" style="color:red">This text is required</div>
+                      </div>
+                        <div class="input-group mg-b-pro-edt">
+                          <span
+                            class="input-group-addon"
+                            style="vertical-align: top"
+                            ><i
+                              class="icon nalika-new-file"
+                              aria-hidden="true"
+                            ></i
+                          ></span>
+                          <textarea
+                            name=""
+                            id=""
+                            cols="30"
+                            rows="5"
+                            class="form-control"
+                            placeholder="Description"
+                            formControlName="description"
+                          ></textarea>
+                        </div>
+                        <div class="input-group mg-b-pro-edt">
+                          <span class="input-group-addon"
+                            >Start</span>
+                          <!-- nhap lieu o day -->
+                          <input
+                            type="date"
+                            class="form-control"
+                            placeholder="Event Title"
+                            formControlName="startDate"
+                          />
+                        </div>
+                        <div *ngIf="ErrorDate!=null" style="color:red">{{ErrorDate}}</div>
+                        <div class="input-group mg-b-pro-edt">
+                          <span class="input-group-addon"
+                            >End</span>
+                          <!-- nhap lieu o day -->
+                          <input
+                            type="date"
+                            class="form-control"
+                            placeholder="Event Title"
+                            formControlName="endDate"
+                          />
+                        </div>
+
+                        <div class="input-group mg-b-pro-edt">
+                          <span class="input-group-addon"
+                            ><i class="icon nalika-edit" aria-hidden="true"></i
+                          ></span>
+                          <!-- nhap lieu o day -->
+                          <input
+                            type="file"
+                            class="form-control"
+                            placeholder="Event Title"
+                            (change)="selectPhoto($event)"
+                          />
+                        </div>
+                        <div class="input-group mg-b-pro-edt">
+                          <span class="input-group-addon"
+                            ><i class="icon nalika-edit" aria-hidden="true"></i
+                          ></span>
+                          <input
+                            type="checkbox"
+                            class="form-control"
+                            checked style="width: 40px; margin-bottom: 5px;"
+                            formControlName="isAction"
+                          />
+                        </div>
+
+                        <!-- //submit -->
+                        <div class="input-group mg-b-pro-edt">
+                          <span class="input-group-addon"
+                            ></span>
+                          <input
+                            type="submit"
+                            class="form-control"
+                          value="SAVE"
+                          />
+                        </div>
+
+                      </div>
+                    </form>
+
+                    </div>
+                <div align="center">
+                    <img *ngIf="url!=null" [src]="url" width="480" height="300">
+
+                </div>
+                </div>
+                <!-- lấy div phia trên hiện ảnh ra ở đây nhan -->
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

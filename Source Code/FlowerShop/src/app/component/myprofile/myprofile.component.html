@@ -1,0 +1,62 @@
+<!-- breadcrumb-section -->
+<div class="breadcrumb-section breadcrumb-bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2 text-center">
+        <div class="breadcrumb-text">
+          <h1>My Profile</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end breadcrumb section -->
+
+<!-- contact form -->
+<div class="contact-from-section mt-150 mb-150">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mb-5 mb-lg-0">
+        <div class="form-title">
+          <h2>Account Informations</h2>
+        </div>
+         <div id="form_status"></div>
+        <div class="contact-form">
+
+          <!-- form contact cho user -->
+          <form  [formGroup]="updateAccountUser" (ngSubmit)="update()" >
+
+            <p>
+              <input type="text" placeholder="Username" formControlName="userName" style="height: 50px;width: 450px;border-radius: 5px;border: 1px solid #cacaca; padding-left: 15px;">
+              </p>
+              <p>
+              <input type="email" placeholder="Email" formControlName="email" style="height: 50px;width: 450px;border-radius: 5px;border: 1px solid #cacaca; padding-left: 15px;" >
+            </p>
+            <p>
+              <input type="text" placeholder="Phone" formControlName="phone"style="height: 50px;width: 450px;border-radius: 5px;border: 1px solid #cacaca; padding-left: 15px;" >
+            </p>
+            <p>
+              <input type="text" style="height: 50px;width: 450px;border-radius: 5px;border: 1px solid #cacaca; padding-left: 15px;" placeholder="Address" formControlName="address">
+            </p>
+            <p>
+              <input type="date" placeholder="DoB" formControlName="dob" style="height: 50px;width:450px; border: 1px solid #cacaca;padding-left: 15px;">
+            </p>
+            <p>
+              <input type="file" style="color: #cacaca;" (change)="selectPhoto($event)">
+              <!-- hiện ảnh vào đây -->
+              <img *ngIf="url!=null" [src]="url" style="width: 150px;height: 120px;border-radius: 50%;border: 1px solid #cacaca;">
+            </p>
+            <!-- id cua tai khoan dang nhap, đang ẩn đi -->
+
+
+            <p><input type="submit" value="SAVE"></p>
+          </form>
+          <!-- end form  -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end contact form -->
+
+

@@ -1,0 +1,43 @@
+<div class="product-status mg-b-30">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <div class="product-status-wrap">
+                  <h4>Comments List</h4>
+                  <div class="add-product">
+                </div>
+
+                  <table>
+                      <tr>
+                          <th>Code</th>
+                          <th>Created</th>
+                          <th>AccountId</th>
+                          <th>AccountName</th>
+                          <th>BouquetId</th>
+                          <th>BouquetName</th>
+                          <th>Delete</th>
+                      </tr>
+                      <ng-container *ngIf="commentbouquet != null">
+                        <tr *ngFor="let comBou of commentbouquet">
+                          <td>{{comBou.commentId}}</td>
+                          <td>{{comBou.created}}</td>
+                          <td>{{comBou.accountId}}</td>
+                          <td>{{comBou.accountName}}</td>
+                          <td>{{comBou.bouquetId}}</td>
+                          <td>{{comBou.bouquetName}}</td>
+                        <td>Delete</td>
+                        </tr>
+
+                      </ng-container>
+                      <!-- vòng lặp dữ liệu -->
+
+
+                  </table>
+                  <div class="custom-pagination">
+
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

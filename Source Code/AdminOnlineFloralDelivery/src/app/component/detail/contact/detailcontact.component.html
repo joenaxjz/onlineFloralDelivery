@@ -1,0 +1,49 @@
+<div class="mailbox-view-area mg-tb-15">
+  <div class="container-fluid">
+      <div class="row">
+
+          <div class="col-md-9 col-md-9 col-sm-9 col-xs-12">
+              <div class="hpanel email-compose mailbox-view mg-b-15">
+                  <div class="panel-heading hbuilt">
+
+                      <div class="p-xs h4">
+                           Email view
+                      </div>
+                  </div>
+                  <div class="border-top border-left border-right bg-light">
+                      <div class="p-m custom-address-mailbox">
+
+                          <div>
+                              <span class="font-extra-bold">Subject: </span>{{subject}}
+                          </div>
+                          <div>
+                              <span class="font-extra-bold">From: </span>
+                              <a>{{email}}</a>
+                          </div>
+                          <div>
+                            <span class="font-extra-bold">Customer Name: </span>
+                            <a >{{name}}</a>
+                        </div>
+                          <div>
+                              <span class="font-extra-bold">Date: </span>{{created}}
+                          </div>
+                      </div>
+                  </div>
+                  <div class="panel-body panel-csm">
+                      <div>
+                        <p>{{message}}</p>
+                      </div>
+                  </div>
+
+
+                  <div class="panel-footer text-right">
+                      <div class="btn-group">
+                        <a [routerLink]="['/admin/detail/replycontact',{id: contactId}]"> <button class="btn btn-default"><i class="fa fa-reply"></i> Reply</button></a>
+                          <button class="btn btn-default" click="delete()"><i class="fa fa-trash-o"></i> Remove</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

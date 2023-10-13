@@ -1,0 +1,61 @@
+<div class="product-status mg-b-30">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <div class="product-status-wrap">
+                  <h4>Delivery List</h4>
+
+                  <div class="add-product">
+
+                   <!-- <select style="margin-right: 20px;">
+                    <option value="All">All</option>
+                    <option value=true>True</option>
+                    <option value=false>False</option>
+                   </select> -->
+                   <!-- // search by name -->
+
+                </div>
+
+                  <table>
+                      <tr>
+                          <th>User</th>
+                          <th>Message</th>
+                          <th>RecipientName</th>
+                          <th>RecipientAddress</th>
+                          <th>RecipientPhone</th>
+                          <th>PaymentMethod</th>
+                          <th>TotalOrder</th>
+                          <th>OrderDate</th>
+                          <th>OrderTime</th>
+                          <th>Status</th>
+                          <!-- <th>Setting</th> -->
+                      </tr>
+                      <!-- vòng lặp dữ liệu -->
+                      <ng-container *ngIf="DeliveryList != null">
+                      <tr *ngFor="let Delivery of DeliveryList  let i = index">
+                        <ng-container *ngIf="i>=page*5-5 && i<page*5">
+                        <td>{{Delivery.username}}</td>
+                        <td>{{Delivery.message}}</td>
+                        <td>{{Delivery.recipientName}}</td>
+                        <td>{{Delivery.recipientAddress}}</td>
+                        <td>{{Delivery.recipientPhone}}</td>
+                        <td>{{Delivery.paymentMethod}}</td>
+                        <td>{{Delivery.totalOrder}}</td>
+                        <td>{{Delivery.orderDate}}</td>
+                        <td>{{Delivery.orderTime}}</td>
+                        <td>{{Delivery.status}}</td>
+                        <!-- <td>
+                          <a [routerLink]="['/admin/edit/order']">
+                            <button data-toggle="tooltip" title="Edit Bouquet" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                          </a>
+                        </td> -->
+                      </ng-container>
+                      </tr>
+                    </ng-container>
+                  </table>
+                  <div class="custom-pagination">
+      <ul class="pagination">
+        <li class="page-item"><a class="page-link" (click)="previousPage()">Previous</a></li>
+        <li class="page-item"><a class="page-link">Page {{page}}</a></li>
+        <li class="page-item"><a class="page-link" (click)="nextPage()">Next</a></li>
+      </ul>

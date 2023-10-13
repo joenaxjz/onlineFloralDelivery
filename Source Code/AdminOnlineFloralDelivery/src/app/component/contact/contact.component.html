@@ -1,0 +1,42 @@
+<div class="product-status mg-b-30">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <div class="product-status-wrap">
+                  <h4>Products List</h4>
+              <div class="add-product">
+            </div>
+                  <table>
+                      <tr>
+                          <th>Code</th>
+                          <th>Name</th>
+                          <th>Email</th>
+                          <th>Subject</th>
+                          <th>Message</th>
+                          <th>Created</th>
+                          <th>Setting</th>
+                      </tr>
+                      <!-- vòng lặp dữ liệu -->
+                      <ng-container *ngIf="ContactList != null">
+                        <tr *ngFor="let Contact of ContactList  let i = index">
+                          <ng-container *ngIf="i>=page*5-5 && i<page*5">
+                        <td>{{Contact.contactId}}</td>
+                        <td>{{Contact.name}}</td>
+                        <td>{{Contact.email}}</td>
+                        <td>{{Contact.subject}}</td>
+                        <td>{{Contact.message}}</td>
+                        <td>{{Contact.created}}</td>
+                        <td>
+                          <a [routerLink]="['/admin/detail/detailcontact', {id:Contact.contactId}]">
+                            <button data-toggle="tooltip" title="Edit Bouquet" class="pd-setting-ed"><i class="fa fa-eye" aria-hidden="true"></i></button>
+                          </a>
+                        </td>
+                          </ng-container>
+                      </tr>
+                      </ng-container>
+                  </table>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

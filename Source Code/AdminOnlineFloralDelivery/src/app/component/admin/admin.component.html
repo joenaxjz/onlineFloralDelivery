@@ -1,0 +1,277 @@
+<div class="left-sidebar-pro">
+  <nav id="sidebar" class="">
+    <div class="sidebar-header">
+      <a href="index.html"
+        ><img class="main-logo" src="assets/img/logo/logo.png" alt="" style="height: 50px;padding-top: 10px;"
+      /></a>
+      <strong><img src="assets/img/logo/logosn.png" alt="" /></strong>
+    </div>
+    <div class="nalika-profile">
+      <div class="profile-dtl">
+        <a href="#"><img src="https://i.pinimg.com/564x/a1/5c/5d/a15c5d6efa357592d7ea84a6df205c77.jpg" alt="" /></a>
+        <h2>AKTT ADMIN</h2>
+      </div>
+    </div>
+    <div class="left-custom-menu-adp-wrap comment-scrollbar">
+      <nav class="sidebar-nav left-sidebar-menu-pro">
+        <ul class="metismenu" id="menu1">
+          <li class="active">
+            <a class="has-arrow">
+              <i class="icon nalika-home icon-wrap"></i>
+              <span class="mini-click-non">Ecommerce</span>
+            </a>
+            <ul
+              class="submenu-angle"
+              aria-expanded="true"
+              style="cursor: pointer"
+            >
+              <li>
+                <a title="Dashboard v.1" [routerLink]="['/admin/dashboard']"
+                  ><span class="mini-sub-pro">Dashboard</span></a
+                >
+              </li>
+              <li>
+                <a title="Product Edit" [routerLink]="['/admin/cart']"
+                  ><span class="mini-sub-pro">Bouquet Card</span></a
+                >
+              </li>
+              <li>
+                <a title="Product Detail" [routerLink]="['/admin/order']"
+                  ><span class="mini-sub-pro">Analytics</span></a
+                >
+              </li>
+
+            </ul>
+          </li>
+          <li>
+            <a class="has-arrow" aria-expanded="false"
+              ><i class="icon nalika-mail icon-wrap"></i>
+              <span class="mini-click-non">Mailbox</span></a
+            >
+            <ul class="submenu-angle" aria-expanded="false">
+              <li>
+                <a title="Inbox" [routerLink]="['/admin/contact']"
+                  ><span class="mini-sub-pro">List Contact</span></a
+                >
+              </li>
+              <li>
+                <a title="View Mail" [routerLink]="['/admin/comment']"
+                  ><span class="mini-sub-pro">List Comment</span></a
+                >
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a class="has-arrow" aria-expanded="false"
+              ><i class="icon nalika-table icon-wrap"></i>
+              <span class="mini-click-non">Data Tables</span></a
+            >
+            <ul class="submenu-angle" aria-expanded="false">
+              <li>
+                <a title="Peity Charts" [routerLink]="['/admin/account']"
+                  ><span class="mini-sub-pro">Table User</span></a
+                >
+              </li>
+              <li>
+                <a title="Data Table" [routerLink]="['/admin/bouquet']"
+                  ><span class="mini-sub-pro">Table Bouquet</span></a
+                >
+              </li>
+              <li>
+                <a title="Data Table" [routerLink]="['/admin/delivery']"
+                  ><span class="mini-sub-pro">Table Delivery</span></a
+                >
+              </li>
+              <li>
+                <a title="Data Table" [routerLink]="['/admin/event']"
+                  ><span class="mini-sub-pro">Table Event</span></a
+                >
+              </li>
+              <li>
+                <a title="Data Table" [routerLink]="['/admin/categories']"
+                  ><span class="mini-sub-pro">Table Category</span></a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li id="removable">
+            <a class="has-arrow" aria-expanded="false"
+              ><i class="icon nalika-new-file icon-wrap"></i>
+              <span class="mini-click-non">Setting</span></a
+            >
+            <ul class="submenu-angle" aria-expanded="false">
+              <li>
+                <a title="Login" [routerLink]="['/login']"
+                  ><span class="mini-sub-pro">Log Out</span></a
+                >
+              </li>
+
+              <li>
+                <a title="Lock" [routerLink]="['/admin/profile']"
+                  ><span class="mini-sub-pro">Profile</span></a
+                >
+              </li>
+              <li>
+                <a title="Lock" [routerLink]="['/admin/profile']"
+                  ><span class="mini-sub-pro"></span></a
+                >
+              </li>
+
+            </ul>
+          </li>
+          <ng-container *ngIf="role == 1">
+          <li id="removable">
+            <a class="has-arrow" aria-expanded="false"
+              ><i class="icon nalika-new-file icon-wrap"></i>
+              <span class="mini-click-non">Super Admin</span></a
+            >
+            <ul class="submenu-angle" aria-expanded="false">
+
+              <li>
+                <a title="Register" [routerLink]="['/admin/register']"
+                  ><span class="mini-sub-pro">Register</span></a
+                >
+              </li>
+
+              <li>
+                <a title="Lock" [routerLink]="['/admin/roleadmin']"
+                  ><span class="mini-sub-pro">List Account</span></a
+                >
+              </li>
+              <li>
+                <a title="Lock" [routerLink]="['/admin/roleadmin']"
+                  ><span class="mini-sub-pro"></span></a
+                >
+              </li>
+            </ul>
+          </li>
+        </ng-container>
+        </ul>
+      </nav>
+    </div>
+  </nav>
+</div>
+
+<!-- Start Welcome area -->
+<div class="all-content-wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="logo-pro">
+          <a href="index.html"
+            ></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="header-advance-area">
+    <div class="header-top-area">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="header-top-wraper">
+              <div class="row">
+                <div class="col-lg-1 col-md-0 col-sm-1 col-xs-12">
+                  <div class="menu-switcher-pro">
+                    <button
+                      type="button"
+                      id="sidebarCollapse"
+                      class="btn bar-button-pro header-drl-controller-btn btn-info navbar-btn"
+                    >
+                      <i class="icon nalika-menu-task"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="col-lg-6 col-md-7 col-sm-6 col-xs-12">
+                  <div class="header-top-menu tabl-d-n hd-search-rp">
+                    <div class="breadcome-heading">
+                      <form role="search" class="">
+                        <input
+                          type="text"
+                          placeholder="Search..."
+                          class="form-control"
+                        />
+                        <a href=""><i class="fa fa-search"></i></a>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                  <div class="header-right-info">
+                    <ul class="nav navbar-nav mai-top-nav header-right-menu">
+                      <li class="nav-item">
+                        <a
+                          [routerLink]="['/admin/contact']"
+                          data-toggle="dropdown"
+                          role="button"
+                          aria-expanded="false"
+                          class="nav-link dropdown-toggle"
+                          ><i class="icon nalika-alarm" aria-hidden="true"></i
+                          ><span class="indicator-nt"></span
+                        ></a>
+                      </li>
+                      <li class="nav-item">
+                        <a
+                          [routerLink]="['/admin/profile']"
+                          data-toggle="dropdown"
+                          role="button"
+                          aria-expanded="false"
+                          class="nav-link dropdown-toggle"
+                        >
+                          <i class="icon nalika-user"></i>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu end -->
+    <div class="breadcome-area">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="breadcome-list">
+              <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                  <div class="breadcomb-wp">
+                    <div class="breadcomb-icon">
+                      <i class="icon nalika-home"></i>
+                    </div>
+                    <div class="breadcomb-ctn">
+                      <h2>Dashboard</h2>
+                      <p>
+                        Welcome to AKTT
+                        <span class="bread-ntd">Admin Template</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <router-outlet></router-outlet>
+
+  <div class="footer-copyright-area">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="footer-copy-right">
+            <p>Copyright © AKTT TEAM All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

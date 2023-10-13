@@ -1,0 +1,77 @@
+<div class="product-status mg-b-30">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <div class="product-status-wrap">
+                  <h4>Products List</h4>
+                  <div class="add-product">
+                      <a [routerLink]="['/admin/add/bouquet']">Add Bouquet</a>
+                  </div>
+                  <div class="add-product">
+                   <select name="" id="" style="margin-right: 20px;" (change)="selectCategory($event)">
+                    <option value="-1">All</option>
+                    <ng-container *ngIf="category != null">
+                      <option *ngFor="let cate of category"
+                      value="{{cate.categoryId}}">{{cate.categoryName}}</option>
+                    </ng-container>
+                   </select>
+
+                   <select name="" id="" style="margin-right: 20px;" [(ngModel)]="activeBouquet" (change)="selectBouquet($event)">
+                    <option value="true">Action</option>
+                    <option value="false">Stop Active</option>
+                   </select>
+                </div>
+
+                  <table>
+                      <tr>
+                          <th>Img</th>
+                          <th>Code</th>
+                          <th>Name</th>
+                          <th>Status</th>
+                          <th>Created</th>
+                          <th>Price</th>
+                          <th>Price Event</th>
+                          <th>CatogryName</th>
+                          <th>Setting</th>
+                      </tr>
+                      <ng-container *ngIf="bouquet != null">
+                        <tr *ngFor="let bq of bouquet">
+                          <td> <img src="{{bq.imageUrl}}" alt=""></td>
+                          <td>{{bq.bouquetId}}</td>
+                          <td>{{bq.bouquetName}}</td>
+                          <td> {{bq.status}}</td>
+                          <td>{{bq.created}} </td>
+                          <td>{{bq.price}}</td>
+                          <td>{{bq.eventPrice}}</td>
+                          <td>{{bq.categoryName}}</td>
+
+                          <td>
+                            <a [routerLink]="['/admin/edit/bouquet',{bouquetId: bq.bouquetId}]">
+                              <button data-toggle="tooltip" title="Edit Bouquet" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                            </a>
+
+                            <a [routerLink]="['/admin/detail/detailbouquet',{bouquetId: bq.bouquetId}]">
+                              <button data-toggle="tooltip" title="Edit Bouquet" class="pd-setting-ed"><i class="fa fa-eye" aria-hidden="true"></i></button>
+                            </a>
+                          </td>
+                        </tr>
+
+                      </ng-container>
+                      <!-- vòng lặp dữ liệu -->
+
+
+                  </table>
+                  <div class="custom-pagination">
+      <ul class="pagination">
+        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+      </ul>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

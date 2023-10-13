@@ -1,0 +1,27 @@
+<!-- Form Register -->
+<div class="wrapper" style="background-image: url('assets/dist/register/images//bg-registration-form-1.jpg');">
+  <div class="inner">
+      <div class="image-holder">
+          <img src="assets/dist/register/images//registration-form-1.jpg" alt="" style="height: 400px;">
+      </div>
+      <form [formGroup]="loginAccount" (ngSubmit)="loginForm()" style ="margin-top:50px" >
+          <h3>Login Form</h3>
+          <div class="form-wrapper" >
+              <input type="text" placeholder="Username" class="form-control" formControlName="userName" style="padding-left: 10px;">
+              <i class="zmdi zmdi-account"></i>
+          </div>
+          <div class="form-wrapper">
+              <input type="password" placeholder="Password" class="form-control" formControlName="passWord" style="padding-left: 10px;">
+              <i class="zmdi zmdi-lock"></i>
+          </div>
+          <div class="form-wrapper" align="center">
+              <input type="submit" value="Login">
+              <i class="zmdi zmdi-arrow-right"></i>
+          </div>
+          <hr>
+          <a><span align="center">Forgot Password</span></a>
+          <a style="margin-left:118px ;" [routerLink]="['/register']"><span align="right">Register Now</span></a>
+      </form>
+  </div>
+</div>
+<!-- end form register -->

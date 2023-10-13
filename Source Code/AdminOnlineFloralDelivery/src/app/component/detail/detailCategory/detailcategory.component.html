@@ -1,0 +1,43 @@
+<div class="product-status mg-b-30">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <div class="product-status-wrap">
+                  <h4>Products List By CategoryName</h4>
+                  <div class="add-product">
+                      <a [routerLink]="['/admin/categories']">Back</a>
+                  </div>
+                  <div class="add-product">
+                </div>
+
+                  <table>
+                      <tr>
+                        <th>Code</th>
+                          <th>Name</th>
+                          <th>Status</th>
+                          <th>Created</th>
+                          <th>Price</th>
+                          <th>Price Event</th>
+                          <th>CatogryName</th>
+                      </tr>
+                      <!-- vòng lặp dữ liệu -->
+                      <ng-container *ngIf="bouquet != null">
+                        <tr *ngFor="let bq of bouquet">
+                          <td>{{bq.bouquetId}}</td>
+                          <td>{{bq.bouquetName}}</td>
+                          <td>{{bq.status}}</td>
+                          <td>{{bq.created}}</td>
+                          <td>{{bq.price}}</td>
+                          <td>{{bq.eventPrice}}</td>
+                          <td>{{bq.categoryName}}</td>
+                      
+                        </tr>
+                      </ng-container>
+
+
+                  </table>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

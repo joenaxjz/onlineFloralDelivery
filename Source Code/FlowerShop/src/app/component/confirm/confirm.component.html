@@ -1,0 +1,24 @@
+<!-- Form Register -->
+<div class="wrapper" style="background-image: url('assets/dist/register/images//bg-registration-form-1.jpg');">
+  <div class="inner">
+      <div class="image-holder">
+          <img src="assets/dist/register/images//registration-form-1.jpg" alt="" style="height: 400px;">
+      </div>
+      <form [formGroup]="ConfirmForm" (ngSubmit)="confirm()" style ="margin-top:50px" >
+          <h3>Activation status</h3>
+          <div class="form-wrapper" >
+              <input type="text" placeholder="Enter the code sent to your email" class="form-control"
+              style="padding-left: 10px;" formControlName="inputcode">
+              <i class="zmdi zmdi-account"></i>
+          </div>
+          <div class="form-wrapper" align="center">
+              <input type="submit" value="Confirm">
+              <i class="zmdi zmdi-arrow-right"></i>
+          </div>
+          <hr>
+          <a><span align="center">Resend code</span></a>
+          <a style="margin-left:118px ;" [routerLink]="['/register']"><span align="right">   &nbsp;&nbsp;&nbsp; Register Now</span></a>
+      </form>
+  </div>
+</div>
+<!-- end form register -->

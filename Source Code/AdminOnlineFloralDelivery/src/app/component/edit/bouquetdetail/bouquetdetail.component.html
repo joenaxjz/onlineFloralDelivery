@@ -1,0 +1,127 @@
+<ul id="myTab3" class="tab-review-design">
+  <li class="active"><a [routerLink]="['/admin/edit/bouquet/detail',{bouquetId: OldBouquetId}]"><i class="icon nalika-edit" aria-hidden="true"></i> Product Edit</a></li>
+  <li><a [routerLink]="['/admin/edit/bouquet/images',{bouquetId: OldBouquetId}]"><i class="icon nalika-picture" aria-hidden="true"></i> Pictures</a></li>
+  <li><a [routerLink]="['/admin/bouquet']">Back</a></li>
+</ul>
+<div class="product-tab-list tab-pane fade active in" id="description">
+  <div class="row">
+
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        <ng-container *ngIf="editFromBouquet != null">
+        <form [formGroup]="editFromBouquet" (ngSubmit)="save()">
+        <div class="review-content-section">
+          <div class="input-group mg-b-pro-edt">
+            <span class="input-group-addon"
+              ><i class="icon nalika-edit" aria-hidden="true"></i
+            ></span>
+            <!-- nhap lieu o day -->
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Bouquet Title"
+              formControlName="bouquetName"
+            />
+          </div>
+          <div class="input-group mg-b-pro-edt">
+            <span
+              class="input-group-addon"
+              style="vertical-align: top"
+              ><i
+                class="icon nalika-new-file"
+                aria-hidden="true"
+              ></i
+            ></span>
+            <textarea
+
+              cols="30"
+              rows="5"
+              class="form-control"
+              placeholder="Description"
+              formControlName="description"
+            ></textarea>
+          </div>
+
+          <div class="input-group mg-b-pro-edt">
+            <span class="input-group-addon"
+              ><i class="fa fa-usd" aria-hidden="true"></i
+            ></span>
+            <input
+              type="number"
+              class="form-control"
+              placeholder="Price"
+              formControlName="price"
+            />
+          </div>
+          <div class="review-content-section">
+            <select
+              name="select"
+              class="form-control pro-edt-select form-control-primary"
+              formControlName="categoryId"
+            >
+            <ng-container *ngIf="category != null">
+              <option *ngFor="let cate of category"
+              value="{{cate.categoryId}}">{{cate.categoryName}}</option>
+            </ng-container>
+
+            </select>
+          </div>
+
+          <div class="input-group mg-b-pro-edt" style="padding-top: 20px;">
+            <span class="input-group-addon"
+              ></span>
+            <input
+              type="submit"
+              class="form-control"
+            value="SAVE"
+            />
+          </div>
+        </div>
+      </form>
+    </ng-container>
+      </div>
+
+
+    <!-- // form nay dung de them anh so bouquet -->
+
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        <form (ngSubmit)="saveAddImg()" [formGroup]="addImageBouquetForm">
+            <div class="review-content-section">
+              <div class="input-group mg-b-pro-edt">
+                <!-- nhap lieu o day -->
+                <input
+                  type="file"
+                  class="form-control"
+                   (change)="mulSelect($event)"
+                   multiple
+                   >
+                  </div>
+                  <!-- // lay id bouquet va an di -->
+                  <div class="input-group mg-b-pro-edt">
+                    <!-- nhap lieu o day -->
+                        <input
+                        type="text"
+                        class="form-control"
+                        placeholder="id"
+                        formControlName="bouquetId"
+                      />
+                  </div>
+                  <div class="input-group mg-b-pro-edt">
+                    <!-- nhap lieu o day -->
+                    <input
+                      type="submit"
+                      class="form-control"
+                     value="SAVE"
+                    />
+                  </div>
+
+                  <!-- // vong lap hien ra nhieu anh o day -->
+                  <div class="input-group mg-b-pro-edt">
+                   <img *ngFor="let url of urls" [src]="url" alt="" class="form-control" style="width: 100px;height:100px;">
+                  </div>
+                </div>
+            </form>
+          </div>
+
+      </div>
+
+    </div>

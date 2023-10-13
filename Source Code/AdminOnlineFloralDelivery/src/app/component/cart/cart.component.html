@@ -1,0 +1,48 @@
+<div class="product-status mg-b-30">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <div class="product-status-wrap">
+                  <h4>Cart List</h4>
+                  <div class="add-product">
+                  </div>
+                  <div class="add-product">
+
+
+                </div>
+
+                  <table>
+                      <tr>
+                          <!-- <th>Img</th> -->
+                          <th>Code</th>
+                          <th>Customer Name</th>
+                          <th>Code Bouquet</th>
+                          <th>Name Bouquet</th>
+                          <th>Price</th>
+                          <th>Quantity</th>
+                          <th>Total</th>
+                      </tr>
+                       <ng-container *ngIf="cart != null">
+                        <tr *ngFor="let ct of cart">
+                          <!-- <td><img src="{{ct.imageUrl}}"></td> -->
+                          <td>{{ct.cartId}}</td>
+                          <td>{{ct.accountName}}</td>
+                          <td>{{ct.bouquetId}}</td>
+                          <td>{{ct.bouquetName}}</td>
+                          <td>{{ct.price}}</td>
+                          <td>{{ct.quantity}}</td>
+                          <td>{{ct.totalPrice}}</td>
+                        </tr>
+
+                      </ng-container>
+                      <!-- vòng lặp dữ liệu -->
+
+
+                  </table>
+                  <div class="custom-pagination">
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

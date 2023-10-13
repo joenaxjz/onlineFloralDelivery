@@ -1,0 +1,94 @@
+
+	<!-- breadcrumb-section -->
+	<div class="breadcrumb-section breadcrumb-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center">
+					<div class="breadcrumb-text">
+						<p>
+              Divine Beauty</p>
+						<h1>Cart</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end breadcrumb section -->
+
+
+<!-- cart -->
+<div class="cart-section mt-150 mb-150">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-12">
+        <div class="cart-table-wrap">
+          <table class="cart-table">
+            <thead class="cart-table-head">
+              <tr class="table-head-row">
+                <th class="product-remove"></th>
+                <th class="product-image">Product Image</th>
+                <th class="product-name">Name</th>
+                <th class="product-price">Price</th>
+                <th class="product-quantity">Quantity</th>
+                <th class="product-total">Total</th>
+                <th class="product-total">Action</th>
+              </tr>
+            </thead>
+
+            <ng-container *ngIf="cartList != null">
+            <tbody *ngFor="let cart of cartList">
+              <!-- thuc hien vong lap san pham du tren ten nguoi dang nhap -->
+                <tr class="table-body-row">
+                    <td class="product-remove"><a>{{cart.cartId}}</a></td>
+                    <td class="product-image"><img src="{{cart.imageUrl}}" alt="" style="width: 70px;height: 70px;"></td>
+                    <td class="product-name">{{cart.bouquetName}}</td>
+                    <td class="product-price">{{cart.price}}</td>
+                    <td class="product-quantity"><input type="number" placeholder="0" [(ngModel)]="cart.quantity" (ngModelChange)="calculateTotalPrice(cart)"></td>
+                    <td class="product-total">{{cart.totalPrice}}</td>
+                    <td class="product-total">
+                     <button style="color:
+                     #f28123;width:50px;border-radius: 30%;margin-top: -10px;" title="Update Cart" (click)="updateCart(cart.cartId, cart.quantity)">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pen-fill" viewBox="0 0 16 16">
+                      <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001z"/>
+                    </svg>
+                  </button>
+                  <button style="color:#f28123;width:50px;border-radius: 30%;margin-top: 5px;" title="Delete" (click)="deleteCart(cart.cartId)">X</button>
+                </td>
+              </tr>
+            </tbody>
+            </ng-container>
+          </table>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="total-section">
+          <table class="total-table">
+            <thead class="total-table-head">
+              <tr class="table-total-row">
+                <th>Total</th>
+                <th>Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="total-data">
+                <td><strong>Subtotal: </strong></td>
+                <td>{{ totalAmount }}</td>
+              </tr>
+              <tr class="total-data">
+                <td><strong>Quantity: </strong></td>
+                <td>{{totalQuantity}}</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="cart-buttons">
+            <a [routerLink]="['/shop']" class="boxed-btn">See More</a>
+            <a [routerLink]="['/checkout']" class="boxed-btn black">Check Out</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end cart -->

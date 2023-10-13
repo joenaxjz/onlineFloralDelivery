@@ -1,0 +1,84 @@
+
+	<!-- breadcrumb-section -->
+	<div class="breadcrumb-section breadcrumb-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center">
+					<div class="breadcrumb-text">
+						<p>Fresh and Organic</p>
+						<h1>History</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end breadcrumb section -->
+
+
+<!-- cart -->
+<div class="cart-section mt-150 mb-150">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-md-12">
+        <div class="cart-table-wrap">
+          <table class="cart-table ">
+            <thead class="cart-table-head">
+              <tr class="table-head-row">
+                <th class="product-remove">Id Order</th>
+                <th class="product-name">Total Money</th>
+                <th class="product-quantity">Date</th>
+                <th class="product-total">Payment Method</th>
+                <th class="product-total">Status</th>
+                <th class="product-total" style="background-color: rgb(29, 0, 251);font-weight: 800;cursor: pointer;color: #fff;" [routerLink]="['/orderdetail']">&#8594; Back</th>
+              </tr>
+            </thead>
+            <tbody>
+              <ng-container *ngIf="listOrderDetail != null">
+                  <tr *ngFor="let order of listOrderDetail">
+                    <!-- Display order information -->
+                    <td  class="product-remove">{{ order.orderId }}</td>
+                    <td  class="product-remove">{{ order.totalOrder }}$</td>
+                    <td  class="product-remove">{{ order.orderDate }} <br>
+                      {{ order.orderTime }}</td>
+                    <td  class="product-remove">{{ order.paymentMethod }}</td>
+                    <td class="product-remove" style="color:green">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16" style="color:green">
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                      </svg>
+                      <br>
+                       Item Received</td>
+
+                    <!-- Add more properties if needed -->
+
+                      <thead class="cart-table-head">
+                        <tr class="table-head-row">
+                          <th class="product-name">BouquetId</th>
+                          <th class="product-quantity">Quantity</th>
+                          <th class="product-total">totalPrice</th>
+                        </tr>
+                      </thead>
+                      <tbody >
+                      <ng-container *ngIf="order.orderDetails != null">
+                        <tr *ngFor="let orderDetail of order.orderDetails">
+                          <!-- Display order detail information -->
+                          <td class="product-remove">
+                            {{ orderDetail.bouquetId }}
+                          </td>
+                          <td  class="product-remove">{{ orderDetail.quantity }}</td>
+                          <td  class="product-remove">{{ orderDetail.totalPrice }}$</td>
+                        </tr>
+                      </ng-container>
+                    </tbody>
+                    <!-- Nested loop for order details -->
+                  </tr>
+              </ng-container>
+              </tbody>
+          </table>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+<!-- end cart -->

@@ -1,0 +1,100 @@
+<!-- breadcrumb-section -->
+<div class="breadcrumb-section breadcrumb-bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2 text-center">
+        <div class="breadcrumb-text">
+          <p>Beauty is in every flower</p>
+          <h1>Shop</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end breadcrumb section -->
+
+<!-- products -->
+<div class="product-section mt-150 mb-150">
+  <div class="container">
+
+    <div class="row" style="padding-bottom: 50px;">
+      <div class="col-md-12">
+            <div class="product-filters">
+              <ul>
+                  <li class="active" style="background-color: #ffff;">
+                    <select name="" id="" style="border: none;color: #f28123;font: 1em sans-serif;padding: 10px;background-color: #ffff;" (change)="selectCategory($event)">
+                      <option value="-1">&#8594;Select All Category</option>
+                      <ng-container *ngIf="category != null">
+                        <option *ngFor="let cate of category"
+                        value="{{cate.categoryId}}">{{cate.categoryName}}</option>
+                      </ng-container>
+                    </select>
+                  </li>
+                  <li class="active" style="background-color: #ffff;">
+                    <select name="" id="" style="border: none;color: #f28123;font: 1em sans-serif;padding: 10px;background-color: #ffff;" (change)="selectPrice($event)">
+                      <option value="-1">Select By Price</option>
+                      <option value="10000">Luxury</option>
+                      <option value="500">Medium</option>
+                      <option value="100">Low</option>
+                    </select>
+                  </li>
+
+                  <li class="active" style="background-color: #ffff;">
+                    <select name="" id="" style="border: none;color: #f28123;font: 1em sans-serif;padding: 10px;background-color: #ffff;"
+                    (change)="selectEventId($event)">
+                      <option value="-1">Select By Event</option>
+                      <ng-container *ngIf="eventSale !=null">
+                        <option *ngFor="let ev of eventSale" value="{{ev.eventId}}">{{ev.eventName}}</option>
+                      </ng-container>
+
+
+                    </select>
+                  </li>
+
+                  <li class="active" style="background-color: #ffff;">
+                    <select name="" id="" style="border: none;color: #f28123;font: 1em sans-serif;padding: 10px;background-color: #ffff;" (click)="selectByEventId()">
+                      <option value="-1">Select By Favorite</option>
+
+                    </select>
+                  </li>
+              </ul>
+          </div>
+        </div>
+      </div>
+
+    <ng-container *ngIf="bouquet != null">
+    <div class="row product-lists">
+        <div class="col-lg-4 col-md-6 text-center" *ngFor="let bq of bouquet let i = index">
+          <ng-container *ngIf="i>=page*9-9 && i<page*9">
+            <div class="single-product-item">
+              <input type="hidden" value="{{bq.bouquetId}}">
+              <div class="product-image">
+                <a [routerLink]="['/singleProduct',{bouquetId: bq.bouquetId}]"><img src="{{bq.imageUrl}}" alt=""></a>
+              </div>
+              <h3>{{bq.bouquetName}}</h3>
+              <p>{{bq.categoryName}}</p>
+              <!-- <p>{{bq.secondPrice}}</p> -->
+              <p class="product-price">{{bq.price}}$ </p>
+              <a class="cart-btn" (click)="addBouquetToCart(bq.bouquetId)">&#8594; Add to Cart</a>
+            </div>
+          </ng-container>
+        </div>
+    </div>
+  </ng-container>
+    <!-- //next và prey -->
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <div class="pagination-wrap">
+          <ul>
+            <li><a class="active" style="color: #ffff;" (click)="previousPage()">&#8592;</a></li>
+            <li><a class="active" style="color: #f28123;background-color: #ffff;border: 1px solid #f28123;">{{page}}</a></li>
+            <li><a class="active" style="color: #ffff;" (click)="nextPage()">&#8594;</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<!-- end products -->
+

@@ -1,0 +1,112 @@
+<!-- breadcrumb-section -->
+<div class="breadcrumb-section breadcrumb-bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2 text-center">
+        <div class="breadcrumb-text">
+          <p>Fresh and Organic</p>
+          <h1>Check Out Product</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end breadcrumb section -->
+
+<!-- check out section -->
+<div class="checkout-section mt-150 mb-150">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="checkout-accordion-wrap">
+          <div class="accordion" id="accordionExample">
+            <div class="card single-accordion">
+              <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Billing Address
+                  </button>
+                </h5>
+              </div>
+
+              <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div class="card-body">
+                  <div class="billing-address-form">
+                    <form [formGroup]="deliveryForm">
+                      <p><input type="text" placeholder="Recipient Name" formControlName="recipientName"></p>
+                      <p><input type="hidden" ></p>
+                      <p><input type="text" placeholder="Recipient Address" formControlName="recipientAddress"></p>
+                      <p><input type="tel" placeholder="Recipient Phone" formControlName="recipientPhone"></p>
+                      <p><textarea cols="30" rows="10" placeholder="Say Something" formControlName="message"></textarea></p>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card single-accordion">
+              <div class="card-header" id="headingThree">
+                <h5 class="mb-0">
+                  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Chooise Payment Method
+                  </button>
+                </h5>
+              </div>
+              <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                <div class="card-body">
+
+                  <div class="card-details">
+                    <ngx-paypal [config]="payPalConfig"></ngx-paypal>
+                    <select name="paymentMethod" id="" style="background-color: #ffff;font-size: 16px;width: 100%;border: 1px solid #efefef;padding: 5px;" (change)="onPaymentMethodChange($event)">
+                      <option style="font-size: 20px;color: #051922;">Chooise payment method orther</option>
+                      <option value="cash" style="font-size: 20px;color: #051922;" >Cash</option>
+                      <!-- <option value="transfer" style="font-size: 20px;color: #051922;" >Paypal</option> -->
+                    </select>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <br>
+          <input type="submit" class="boxed-btn" (click)="complete(totalAmount)" value="Complete">
+
+        </div>
+
+      </div>
+
+      <div class="col-lg-4">
+        <div class="order-details-wrap">
+          <!-- // thuc hien vong lap do dư liệu vào -->
+          <table class="order-details">
+            <thead>
+              <tr>
+                <th>Your order Details</th>
+                <th>Quantity</th>
+                <th>Price</th>
+              </tr>
+            </thead>
+            <ng-container *ngIf="cartList != null">
+            <tbody class="order-details-body">
+              <tr *ngFor="let cart of cartList">
+                <input type="hidden" value="{{cart.bouquetId}}">
+                <td>{{cart.bouquetName}}</td>
+                <td>{{cart.quantity}}</td>
+                <td>{{cart.totalPrice}}</td>
+              </tr>
+            </tbody>
+          </ng-container>
+          <tbody class="order-details-body" style="background-color: antiquewhite;">
+            <tr>
+              <td>Total</td>
+              <td colspan="2">{{totalAmount}} $</td>
+            </tr>
+          </tbody>
+          </table>
+          <a [routerLink]="['/cart']" class="boxed-btn">Place Order</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end check out section -->

@@ -1,0 +1,47 @@
+<ul id="myTab3" class="tab-review-design">
+  <li><a [routerLink]="['/admin/edit/bouquet/detail',{bouquetId: OldBouquetId}]"><i class="icon nalika-edit" aria-hidden="true"></i> Product Edit</a></li>
+  <li class="active"><a [routerLink]="['/admin/edit/bouquet/images',{bouquetId: OldBouquetId}]"><i class="icon nalika-picture" aria-hidden="true"></i> Pictures</a></li>
+  <li><a [routerLink]="['/admin/bouquet']">Back</a></li>
+</ul>
+<div id="myTabContent" class="tab-content custom-product-edit">
+<div class="product-status mg-b-30">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <div class="product-status-wrap">
+                  <h4>List Images</h4>
+                  <table>
+                      <tr>
+                          <th width="20%">Code</th>
+                          <th width="50%">Images</th>
+                          <th colspan="2">Action</th>
+                      </tr>
+                      <!-- vòng lặp dữ liệu -->
+                      <ng-container *ngIf="Imagebouquet != null">
+                        <tr *ngFor="let image of Imagebouquet">
+                        <td>{{image.imageId}}</td>
+                        <td><img src="{{image.imageUrl}}" width="480" height="320"></td>
+                        <td>
+                          <input type="file" (change)="selectPhoto($event)">
+                        </td>
+                        <td>
+
+                          <a [routerLink]="['/admin/edit/bouquet/images',{bouquetId: OldBouquetId}]">
+                            <button data-toggle="tooltip" title="Update images" class="pd-setting-ed" (click)="update(image.imageId)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                          </a>
+                        </td>
+                        <td>
+                          <a [routerLink]="['/admin/edit/bouquet/images',{bouquetId: OldBouquetId}]">
+                            <button data-toggle="tooltip" title="Delelte" class="pd-setting-ed" (click)="delete(image.imageId)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                          </a>
+                        </td>
+
+                      </tr>
+                      </ng-container>
+                  </table>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+</div>

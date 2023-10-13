@@ -1,0 +1,56 @@
+
+<!-- Form Register -->
+<div class="wrapper" style="background-image: url('assets/dist/register/images//bg-registration-form-1.jpg');">
+    <div class="inner">
+        <div class="image-holder">
+          <!-- // update lai chieu cao hinh ở register -->
+            <img src="assets/dist/register/images//registration-form-1.jpg" alt="" style="height:570px;">
+        </div>
+
+        <!-- start form -->
+        <form [formGroup]="registerAccount" (ngSubmit)="save()">
+            <h3>Registration Form</h3>
+
+            <div class="form-wrapper">
+                <input type="text" placeholder="Username" formControlName="userName" class="form-control">
+                <i class="zmdi zmdi-userName"></i>
+            </div>
+
+            <div class="form-wrapper">
+                <input type="password" placeholder="password" formControlName="passWord"class="form-control">
+                <i class="zmdi zmdi-passWord"></i>
+            </div>
+
+            <div class="form-wrapper">
+                <input type="password" placeholder="Confirm Password" class="form-control">
+                <i class="zmdi zmdi-lock"></i>
+            </div>
+            <div class="form-wrapper">
+                <input type="text" placeholder="Email Address" formControlName="email" class="form-control">
+                <i class="zmdi zmdi-email"></i>
+            </div>
+
+            <div class="form-wrapper">
+                <input type="text" placeholder="Phone" formControlName="phone" class="form-control">
+                <i class="zmdi zmdi-phone"></i>
+            </div>
+            <div class="form-wrapper">
+                <input type="text" placeholder="Address" formControlName="address" class="form-control">
+                <i class="zmdi zmdi-address"></i>
+            </div>
+
+            <div class="form-wrapper">
+                <input type="date" placeholder="Date of Birth" formControlName="dob" class="form-control">
+                <i class="zmdi zmdi-dob"></i>
+            </div>
+
+            <div class="form-wrapper" align="center">
+                <input type="submit" value="Register">
+                <i class="zmdi zmdi-arrow-right"></i>
+            </div>
+
+        </form>
+
+    </div>
+</div>
+<!-- end form register -->
